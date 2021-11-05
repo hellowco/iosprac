@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="pomodoro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pomodoro" translatesAutoresizingMaskIntoConstraints="NO" id="YvR-Cb-bG7">
+                                <rect key="frame" x="157" y="68" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="JX3-w0-wFc"/>
+                                    <constraint firstAttribute="height" constant="100" id="yvr-8K-R6h"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDH-i6-xd0">
+                                <rect key="frame" x="24" y="248" width="366" height="60"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" alpha="0.0" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ppl-FG-8gc">
+                                <rect key="frame" x="48" y="338" width="318" height="4"/>
+                            </progressView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" style="wheels" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6f-4j-jbS">
+                                <rect key="frame" x="0.0" y="198" width="414" height="216"/>
+                                <locale key="locale" localeIdentifier="ko_KR"/>
+                            </datePicker>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="4UQ-im-EMY">
+                                <rect key="frame" x="24" y="438" width="366" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mqN-Z4-7Q5">
+                                        <rect key="frame" x="0.0" y="0.0" width="143" height="30"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="취소"/>
+                                        <connections>
+                                            <action selector="tabCancelButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hn7-h8-vYS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYW-zd-pvU">
+                                        <rect key="frame" x="223" y="0.0" width="143" height="30"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="시작"/>
+                                        <connections>
+                                            <action selector="tabToggleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fHd-TT-M1p"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4UQ-im-EMY" firstAttribute="top" secondItem="S6f-4j-jbS" secondAttribute="bottom" constant="24" id="4re-Fw-P3m"/>
+                            <constraint firstItem="S6f-4j-jbS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Zqu-uf-mOG"/>
+                            <constraint firstItem="YvR-Cb-bG7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bPg-jv-jZx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4UQ-im-EMY" secondAttribute="trailing" constant="24" id="bqP-lH-5AJ"/>
+                            <constraint firstItem="pDH-i6-xd0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="fjk-eo-9p4"/>
+                            <constraint firstItem="Ppl-FG-8gc" firstAttribute="top" secondItem="pDH-i6-xd0" secondAttribute="bottom" constant="30" id="hSE-TL-IoA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pDH-i6-xd0" secondAttribute="trailing" constant="24" id="hk5-kN-vWr"/>
+                            <constraint firstItem="pDH-i6-xd0" firstAttribute="centerX" secondItem="YvR-Cb-bG7" secondAttribute="centerX" id="j9d-Ow-w3u"/>
+                            <constraint firstAttribute="trailing" secondItem="S6f-4j-jbS" secondAttribute="trailing" id="k7g-Rq-h58"/>
+                            <constraint firstItem="YvR-Cb-bG7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="lj0-A3-eRt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ppl-FG-8gc" secondAttribute="trailing" constant="48" id="oU3-Wc-qsw"/>
+                            <constraint firstItem="S6f-4j-jbS" firstAttribute="top" secondItem="YvR-Cb-bG7" secondAttribute="bottom" constant="30" id="vW7-4B-hvL"/>
+                            <constraint firstItem="4UQ-im-EMY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="w0V-cH-W6W"/>
+                            <constraint firstItem="Ppl-FG-8gc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="48" id="xRq-eT-mge"/>
+                            <constraint firstItem="pDH-i6-xd0" firstAttribute="top" secondItem="YvR-Cb-bG7" secondAttribute="bottom" constant="80" id="xxZ-JV-xDq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="mqN-Z4-7Q5" id="6hm-sV-57e"/>
+                        <outlet property="datePicker" destination="S6f-4j-jbS" id="FEG-8u-rXa"/>
+                        <outlet property="imageView" destination="YvR-Cb-bG7" id="pWr-PX-QGu"/>
+                        <outlet property="progressView" destination="Ppl-FG-8gc" id="3DF-Xo-qh2"/>
+                        <outlet property="timerLabel" destination="pDH-i6-xd0" id="G7d-SQ-pqK"/>
+                        <outlet property="toggleButton" destination="LYW-zd-pvU" id="gs8-Nh-CHr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="100"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pomodoro" width="32" height="32"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
