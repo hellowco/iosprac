@@ -1,0 +1,6 @@
+framework module Pods_SpotifyLoginStyle {
+  umbrella header "Pods-SpotifyLoginStyle-umbrella.h"
+
+  export *
+  module * { export * }
+}
